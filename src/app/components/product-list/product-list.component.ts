@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { IProduct } from './product';
 import { ProductService } from './product.service';
 
@@ -7,30 +8,27 @@ import { ProductService } from './product.service';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent implements OnInit {
-   pageTitle: string = 'Product List';
-   imageWidth: number =75;
-   imageMargin: number = 2;
-   showImage: boolean = false;
+export class ProductListComponent implements OnInit, OnDestroy {
+  pageTitle = 'Product List';
+  imageWidth = 50;
+  imageMargin = 2;
+  showImage = false;
+  errorMessage = '';
+  sub!: Subscription;
 
-  private _listFilter: string = '';
+  private _listFilter = '';
   get listFilter(): string {
     return this._listFilter;
   }
   set listFilter(value: string) {
     this._listFilter = value;
-    console.log('In setter: ' + this._listFilter);
     this.filteredProducts = this.performFilter(value);
   }
 
   filteredProducts: IProduct[] = [];
+  products: IProduct[] = [];
 
-   products: IProduct[] = [];
-
-
-
-  constructor(private productService: ProductService) { }
-
+  constructor(private productService: ProductService) {}
 
   performFilter(filterBy: string): IProduct[] {
     filterBy = filterBy.toLocaleLowerCase();
@@ -42,17 +40,21 @@ export class ProductListComponent implements OnInit {
     this.showImage = !this.showImage;
   }
 
-
-
   ngOnInit(): void {
-    this.products = this.productService.getProducts();
-    this.filteredProducts = this.products;
-
+    this.sub = this.productService.getProducts().subscribe({
+      next: products => {
+        this.products = products;
+        this.filteredProducts = this.products;
+      },
+      error: err => this.errorMessage = err
+    });
   }
 
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
+  }
 
   onRatingClicked(message: string): void {
     this.pageTitle = 'Product List: ' + message;
   }
-
 }
