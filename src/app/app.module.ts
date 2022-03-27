@@ -10,6 +10,7 @@ import { StarComponent } from './components/star/star.component';
 import { WelcomeComponent } from './components/home/welcome.component';
 import { ProductDetailComponent } from './components/products/product-detail.component';
 import { RouterModule } from '@angular/router';
+import { ProductDetailGuard } from './components/products/product-detail.guard';
 
 @NgModule({
   // declarations are components that WE declare locally to be acknowledged
@@ -26,7 +27,15 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot([]),
+    RouterModule.forRoot([
+      { path: 'products', component: ProductListComponent },
+      { path: 'products/:id', 
+        canActivate: [ProductDetailGuard],
+        component: ProductDetailComponent },
+      { path: 'welcome', component: WelcomeComponent },
+      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+      { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
