@@ -1,27 +1,90 @@
-# ApmNew
+# Acme Product Management
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
+  
 
-## Development server
+  ## Description
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+  This project uses Angular to build a simple product managment website with multiple compononets.
+  
+  Click the link below to visit my deployed page.
+  <!-- [URL](undefined) -->
+  [(https://fenixs83.github.io/acmeProductManagement/)]
 
-## Code scaffolding
+  ## Table of Contents
+  
+  * [Goals](#goals)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  * [Usage](#usage) 
 
-## Build
+  * [Installation](#installation)  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+  * [Test](#test)
 
-## Running unit tests
+  * [Problems](#problems)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  * [Visualization](#visualization)
 
-## Running end-to-end tests
+  * [Acknowledgements](#acknowledgements)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+  * [Contributions](#contributions)
 
-## Further help
+  * [Resources](#resources)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  * [License](#license) 
+
+  * [Contact](#contact) 
+
+  
+  ## Goals
+
+  My main goal in completing this project was to expand my knowledge base by helping me to learn and understand Angular.
+
+  ## Motivation
+
+  I've found that a lot of businesses use Angular for their websites.  I wanted to add to my marketable abilities by being able to add Angular to my developing skillset.
+
+  ## Usage
+
+  I intend to use this project to refer back to in the future when building other websites of similar layout and functionality.
+
+  ## Installation
+  
+  npm -i  
+
+  ## Test
+
+  ng test
+
+  ## Problems
+
+  I had some difficulties getting my http client to acknowledge the server/json file that contains the product data.  As always, determination and a good thorough line-by-line checking eventually won out and I was able to over the complications.
+
+  ## Visualization
+
+  placeholder to add images or other media
+
+  ## Acknowledgements
+
+  I would like to thank Deborah Kurata for hosting the Pluralsight course that I followed along with to create this project.  She did an excellent job speaking and explaining every part of the code.  Her Github can be found here: [(https://github.com/DeborahK)]   Her repository for this particular project can be found here:  [(https://github.com/deborahk/angular-gettingstarted)]    Her Angular: Getting Started course can be found on Pluralsight.
+
+  ## Contributions
+
+  Email me and we will discuss contributions from there.
+
+  ## Resources
+ 
+  I built this project using Angular 13 for the framework and Bootstrap for styling.
+
+  ## License
+
+  
+
+
+
+  ## Contact
+  
+  GitHub Username: FenixS83 [@FenixS83](https://github.com/FenixS83)
+
+  fenix.sampson@gmail.com
+
+
