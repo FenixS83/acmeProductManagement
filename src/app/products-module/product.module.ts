@@ -24,5 +24,6 @@ import { ConvertToSpacesPipe } from '../shared/convert-to-spaces.pipe';
     ]),
     SharedModule,
   ],
+  providers: [ProductDetailGuard],
 })
 export class ProductModule { }
