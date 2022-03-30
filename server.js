@@ -9,7 +9,7 @@ app.use(('/build'));
 
 app.get('/*', function(req,res) {
     
-res.sendFile(path.join('build/index.html'));
+res.sendFile('build/index.html');
 });
 
 // Start the app by listening on the default Heroku port
